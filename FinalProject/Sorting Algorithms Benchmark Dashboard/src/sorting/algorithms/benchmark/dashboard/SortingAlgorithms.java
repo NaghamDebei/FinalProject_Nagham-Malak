@@ -200,11 +200,11 @@ public class SortingAlgorithms {
         {
             int size = DataSize[j];
             int[] data = generateDataset(type, size);
-            long t1 = benchmark(data, "insertion");
-            long t2 = benchmark(data, "merge");
-            long t3 = benchmark(data, "heap");
-            long t4 = benchmark(data, "quick");
-            long t5 = benchmark(data, "randquick");
+            double t1 = benchmark(data, "insertion");
+            double t2 = benchmark(data, "merge");
+            double t3 = benchmark(data, "heap");
+            double t4 = benchmark(data, "quick");
+            double t5 = benchmark(data, "randquick");
 
             System.out.printf("| %-6d | %-7d | %-6d | %-5d | %-6d | %-10d |\n", size , t1, t2, t3, t4, t5);
         }
@@ -212,7 +212,7 @@ public class SortingAlgorithms {
         }
     }
 
-    private static long benchmark(int[] original, String algorithm) 
+    private static double benchmark(int[] original, String algorithm) 
     {
         int[] arr = copyArray(original);
         long start = System.nanoTime();
@@ -262,4 +262,5 @@ public class SortingAlgorithms {
         for (int i = 0; i < arr.length; i++) c[i] = arr[i];
         return c;
  }
+
 }
